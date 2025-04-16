@@ -1,0 +1,38 @@
+import feedparser
+
+def parse_rss_feed(url):
+    """
+    Parses an RSS feed and returns the feed's entries.
+    
+    Args:
+        url (str): The URL of the RSS feed.
+    
+    Returns:
+        list: A list of entries from the RSS feed.
+    """
+    feed = feedparser.parse(url)
+    if feed.bozo:
+        raise ValueError("Failed to parse RSS feed. Check the URL.")
+    
+    return feed.entries
+
+def display_feed_entries(entries):
+    """
+    Displays the entries from an RSS feed.
+    
+    Args:
+        entries (list): A list of feed entries.
+    """
+    for entry in entries:
+        print(f"Title: {entry.title}")
+        print(f"Link: {entry.link}")
+        print(f"Published: {entry.published}")
+        print("-" * 40)
+
+if __name__ == "__main__":
+    rss_url = input("Enter the RSS feed URL: ")
+    try:
+        entries = parse_rss_feed(rss_url)
+        display_feed_entries(entries)
+    except ValueError as e:
+        print(e)
