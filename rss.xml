@@ -1,38 +1,27 @@
-import feedparser
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>Your Website Title</title>
+        <link>http://egan.co.kr</link>
+        <description>A brief description of your website.</description>
+        <language>en-us</language>
+        <lastBuildDate><?php echo date(DATE_RSS); ?></lastBuildDate>
 
-def parse_rss_feed(url):
-    """
-    Parses an RSS feed and returns the feed's entries.
-    
-    Args:
-        url (str): The URL of the RSS feed.
-    
-    Returns:
-        list: A list of entries from the RSS feed.
-    """
-    feed = feedparser.parse(url)
-    if feed.bozo:
-        raise ValueError("Failed to parse RSS feed. Check the URL.")
-    
-    return feed.entries
+        <item>
+            <title>First Blog Post</title>
+            <link>https://www.yourwebsite.com/blog/first-post</link>
+            <description>This is the description of the first blog post.</description>
+            <pubDate>Mon, 02 Oct 2023 12:00:00 +0000</pubDate>
+            <guid>https://www.yourwebsite.com/blog/first-post</guid>
+        </item>
 
-def display_feed_entries(entries):
-    """
-    Displays the entries from an RSS feed.
-    
-    Args:
-        entries (list): A list of feed entries.
-    """
-    for entry in entries:
-        print(f"Title: {entry.title}")
-        print(f"Link: {entry.link}")
-        print(f"Published: {entry.published}")
-        print("-" * 40)
+        <item>
+            <title>Second Blog Post</title>
+            <link>https://www.yourwebsite.com/blog/second-post</link>
+            <description>This is the description of the second blog post.</description>
+            <pubDate>Tue, 03 Oct 2023 12:00:00 +0000</pubDate>
+            <guid>https://www.yourwebsite.com/blog/second-post</guid>
+        </item>
 
-if __name__ == "__main__":
-    rss_url = input("Enter the RSS feed URL: ")
-    try:
-        entries = parse_rss_feed(rss_url)
-        display_feed_entries(entries)
-    except ValueError as e:
-        print(e)
+    </channel>
+</rss>
