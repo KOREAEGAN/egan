@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko" class="iroje-layout"></html>
+<head>
+<meta name="google-site-verification" content="UXRCz8Wp31dqmPGcKwzFq5nIusCSgr4RFlQfBX8_ZyY" />
+<meta name="naver-site-verification" content="d6471d15d6cc5761b5c83bdf6532cfc2e09920a2" />
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(주)한국이건</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #1c1c1c;
+            flex-wrap: wrap;
+        }
+        .logo {
+            margin: 15px;
+        }
+        .buttons {
+            margin: 15px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .buttons button {
+            font-family: 'Black Han Sans';
+            font-style: bold;
+            font-style: italic;
+            font-size: 20px;
+            border: none;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+        }
+        .buttons button:hover {
+            border-bottom: 1px solid #1c1c1c;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        footer {
+            font-family: 'Black Han Sans';
+            color: #ffffff;
+            background-color: #1c1c1c;
+            padding: 10px 20px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+        }
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slider img {
+            width: 100%;
+            max-width: 100%;
+            flex-shrink: 0;
+            height: auto;
+        }
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .slider-button.prev {
+            left: 10px;
+        }
+        .slider-button.next {
+            right: 10px;
+        }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .buttons {
+                justify-content: center;
+                width: 100%;
+            }
+            .buttons button {
+                font-size: 18px;
+            }
+            .slider img {
+                height: auto;
+                max-height: 300px;
+            }
+        }
+        @media (max-width: 480px) {
+            .buttons button {
+                font-size: 16px;
+            }
+            .slider img {
+                height: auto;
+                max-height: 200px;
+            }
+        }
+    </style>
+    <script>
+        let currentIndex = 0;
+
+        function changeSlide(direction) {
+            const slider = document.querySelector('.slider');
+            const slides = slider.children;
+            const totalSlides = slides.length;
+
+            currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        function autoSlide() {
+            changeSlide(1);
+        }
+
+        setInterval(autoSlide, 5000); // Automatically change slide every 2 seconds
+    </script>
+</head>
+<body>
+    <header>
+            <meta name="google-site-verification" content="UXRCz8Wp31dqmPGcKwzFq5nIusCSgr4RFlQfBX8_ZyY" />
+            <meta name="naver-site-verification" content="d6471d15d6cc5761b5c83bdf6532cfc2e09920a2" />
+        <div class="logo">
+            <a href="index.html">
+                <img src="한국이건로고.png" alt="로고" style="height: 60px; transition: opacity 0.3s ease;" 
+                     onmouseover="this.style.opacity='0'; setTimeout(() => this.src='한국이건로고_호버.png', 300); setTimeout(() => this.style.opacity='1', 300);" 
+                     onmouseout="this.style.opacity='0'; setTimeout(() => this.src='한국이건로고.png', 300); setTimeout(() => this.style.opacity='1', 300);">
+            </a>
+        </div></div>
+        <div class="buttons">
+            <a href="introduction.html"><button>INTRODUCTION</button></a>
+            <a href="project.html"><button>PROJECT</button></a>
+            <a href="gallery.html"><button>GALLERY</button></a>
+        </div>
+    </header>
+    <main>
+    <div class="slider-container">
+        <button class="slider-button prev" onclick="changeSlide(-1)">&#10094;</button>
+        <div class="slider">
+            <img src="image/image1.jpg" alt="Image 1">
+            <img src="image/image2.jpg" alt="Image 2">
+            <img src="image/image3.jpg" alt="Image 3">
+            <img src="image/image4.jpg" alt="Image 4">
+            <img src="image/image5.jpg" alt="Image 5">
+            <img src="image/image6.jpg" alt="Image 6">
+            <img src="image/image7.jpg" alt="Image 7">
+            <img src="image/image8.jpg" alt="Image 8">
+            <img src="image/image9.jpg" alt="Image 9">
+            <img src="image/image10.jpg" alt="Image 10">
+            <img src="image/image11.jpg" alt="Image 11">
+            <img src="image/image12.jpg" alt="Image 12">
+            <img src="image/image13.jpg" alt="Image 13">
+            <img src="image/image14.jpg" alt="Image 14">
+            <img src="image/image15.jpg" alt="Image 15">
+            <img src="image/image16.jpg" alt="Image 16">
+            <img src="image/image17.jpg" alt="Image 17">
+            <img src="image/image18.jpg" alt="Image 18">
+            <img src="image/image19.jpg" alt="Image 19">
+            <img src="image/image20.jpg" alt="Image 20">
+        </div>
+        <button class="slider-button next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <style>
+        .slider-container {
+            position: relative;
+            width: 80%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slider img {
+            width: 100%;
+            max-width: 100%;
+            flex-shrink: 0;
+        }
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .slider-button.prev {
+            left: 10px;
+        }
+        .slider-button.next {
+            right: 10px;
+        }
+    </style>
+
+    <script>
+        let currentIndex = 0;
+
+        function changeSlide(direction) {
+            const slider = document.querySelector('.slider');
+            const slides = slider.children;
+            const totalSlides = slides.length;
+
+            currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    </script>
+    </main>
+    <footer>
+        <p>(주)한국이건 | 대표자 : 김보민 | 104-86-34956 | 경기도 구리시 이문안로129번길 19, 2층(수택동) | 031-555-4601</p>
+    </footer>
+</body>
+</html>
